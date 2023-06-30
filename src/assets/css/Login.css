@@ -1,3 +1,4 @@
+/*
 .login-container{
     display: flex;
     align-items:  center;
@@ -8,3 +9,77 @@
     padding: 10px 0;
     border: dotted 3px #D3D3D3;    
 }
+
+*/
+
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-top: 30px;
+    border: dotted 3px #D3D3D3;    
+  }
+  .login-form {
+    display: flex;
+    width: 275px;
+    margin: auto;
+    flex-direction: column;
+  }
+  .login-form > input {
+    border: none;
+    border-bottom: 1px solid #fcced3;
+    height: 35px;
+    margin-bottom: 20px;
+  }
+  
+  .login-form input::placeholder {
+    color: #cbcccd;
+    font-size: 16px;
+  }
+  
+  .login-form input[type="checkbox"] {
+    transform: scale(2);
+    margin-right: 20px;
+  }
+  
+  .checkbox-container {
+    margin-top: 20px;
+    padding: 10px;
+  }
+  .checkbox-container > div {
+    display: flex;
+  }
+  .checkbox-container > p {
+    text-align: left;
+    color: #999999;
+    font-size: 12px;
+  }
+  
+  .checkbox-container span {
+    color: #666666;
+  }
+  
+  .login-form button {
+    background-color: #2cb1ba;
+    height: 45px;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    margin-top: 20px;
+  }
+  
+  .login-container a {
+    color: #2cb1ba;
+    font-size: 12px;
+  }
+  
+  .login-error-message {
+    color: red;
+    font-size: 9px;
+  }
+  
