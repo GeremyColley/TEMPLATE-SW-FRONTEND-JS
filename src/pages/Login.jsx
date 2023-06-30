@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
+import '../assets/css/Login.css'
 
 const Login = ({ setUser }) => {
   const [email, setEmail] = useState("");
@@ -42,9 +43,9 @@ const Login = ({ setUser }) => {
   };
 
   return (
-    <div className="signup-container">
+    <div className="login-container">
       <h2>Se connecter</h2>
-      <form onSubmit={handleSubmit} className="signup-form">
+      <form onSubmit={handleSubmit} className="login-form">
         <input
           onChange={(event) => {
             setEmail(event.target.value);

@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import '../assets/css/Publish.css'
 
 const Publish = ({token}) => {
     const [nomProjet, setNomProjet] = useState();
@@ -53,7 +54,7 @@ const Publish = ({token}) => {
 
 
     return token ? (
-        <div>
+        <div className="publish-container">
             <h2>Publie ton projet</h2>
             <form onSubmit={handleSubmit}>
                 <div className="text-input-section">
@@ -92,7 +93,7 @@ const Publish = ({token}) => {
             </form>
         </div>
     ) : (
-        <div>
+        <div className="publish-container">
             <p>Accés interdit</p>
         </div>
     );

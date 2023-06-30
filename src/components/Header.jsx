@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate, useLocation, Link} from "react-router-dom";
 import '../assets/css/Header.css'
+import logo from "../assets/img/logo.png"
 
 const Header = ({search,setSearch, token, setUser }) => {
 
@@ -8,9 +9,22 @@ const Header = ({search,setSearch, token, setUser }) => {
     const location = useLocation(); // Pour savoir dans quel route on est. Pour utiliser location.pathname
 
     return (
-        <div className="header-container">
-            <div className="banner">
-               
+        <div className="header">
+            <div className="header-container">
+
+                <div className="cart-logo" onClick={() => {navigate("/");}}>
+                    <img alt="Logo" src={logo} width="100px"  height="60px" />
+                </div>
+
+                <div>
+                    {(location.pathname === "/" ) && (
+                        <input
+                            onChange={(event) => setSearch(event.target.value)}
+                            placeholder="Projets"
+                        />
+                    )}
+                </div>
+
                 <nav>
                     <Link to="/">Home</Link>
                     <br/>
@@ -18,46 +32,28 @@ const Header = ({search,setSearch, token, setUser }) => {
                 </nav>
                 <br/>
 
-                <div>
-
-                    {(location.pathname === "/" ) ? (
-                        <input
-                            onChange={(event) => setSearch(event.target.value)}
-                            placeholder="Projets"
-                        />
-                    ) : (
-                        <p>tyu</p>
-                    )}
-    
-                </div>
-                
                 {token ? (
                     <button
                         onClick={() => {
                         setUser(null);
                         }}
                         className="button-logout"
-                    >
-                        Se déconnecter
-                    </button>
+                    >Se déconnecter</button>
                 ) : (
                     <div>
                         <button
-                        onClick={() => {
-                            navigate("/signup");
-                        }}
-                        className="header-button button-login-signup button-signup"
-                        >
-                        S'inscrire
-                        </button>
+                            onClick={() => {
+                                navigate("/signup");
+                            }}
+                            className="header-button button-login-signup button-signup"
+                        >S'inscrire</button>
+                        <br/>
                         <button
-                        onClick={() => {
-                            navigate("/login");
-                        }}
-                        className="header-button button-login-signup"
-                        >
-                        Se connecter
-                        </button>
+                            onClick={() => {
+                                navigate("/login");
+                            }}
+                            className="header-button button-login-signup"
+                        >Se connecter</button>
                     </div>
                 )}
             </div>
@@ -68,19 +64,3 @@ const Header = ({search,setSearch, token, setUser }) => {
 }
 
 export default Header;
-
-/*
-
- <h1>detakende-spill</h1>
- <imput 
-type="text"
-className="search-input"
-placeholder="Recherche des articles"
-onChange={(event) => setSearch(event.target.value)}
-/>
-<select name="type" id="type">
-<option value="JDR">JDR</option>
-<option value="JEUX">JEUX</option>
-<option value="BD">Bandes dessinées</option>
-</select>
-*/

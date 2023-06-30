@@ -1,0 +1,10 @@
+.publish-container{
+    display: flex;
+    align-items:  center;
+    justify-content: space-between;
+    width: 1600px;
+    height: 60px;
+    margin: auto;
+    padding: 10px 0;
+    border: dotted 3px #D3D3D3;    
+}

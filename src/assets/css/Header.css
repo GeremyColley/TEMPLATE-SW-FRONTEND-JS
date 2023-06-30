@@ -1,3 +1,18 @@
+.header{
+    margin-bottom: 20px;
+}
+
+.header-container{
+    display: flex;
+    align-items:  center;
+    justify-content: space-between;
+    width: 1600px;
+    height: 60px;
+    margin: auto;
+    padding: 10px 0;
+    border: dotted 3px #D3D3D3;    
+}
+
 .banner{
     display: flex;
     align-items: center;
@@ -6,7 +21,7 @@
     color: white;
     font-size: 1rem; 
     width: auto;
-    height: 80px;   
+    height: 80px;       
 }
 
 .cart-logo{
@@ -28,22 +43,10 @@
 .MainContent{
     background-color: #191919;
     color: white;
-
 }
 
 .sideContent{
     background-color: white;
     color: black;
-
 }
 
-.header-container{
-    display: flex;
-    align-items:  center;
-    justify-content: space-between;
-    width: 1600px;
-    height: 60px;
-    margin: auto;
-    padding: 10px 0;
-    border-bottom: solid 3px #D3D3D3;
-}
