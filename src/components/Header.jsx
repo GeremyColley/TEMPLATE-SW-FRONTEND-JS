@@ -1,18 +1,36 @@
 import React from "react";
-import { useNavigate, Link} from "react-router-dom";
+import { useNavigate, useLocation, Link} from "react-router-dom";
+import '../assets/css/Header.css'
 
 const Header = ({search,setSearch, token, setUser }) => {
 
     const navigate = useNavigate();
+    const location = useLocation(); // Pour savoir dans quel route on est. Pour utiliser location.pathname
 
     return (
-        <div>
-            <div>
+        <div className="header-container">
+            <div className="banner">
+               
                 <nav>
                     <Link to="/">Home</Link>
+                    <br/>
                     <Link to="/Publish">Lance ton projet</Link>
                 </nav>
-                <h1>detakende-spill</h1>
+                <br/>
+
+                <div>
+
+                    {(location.pathname === "/" ) ? (
+                        <input
+                            onChange={(event) => setSearch(event.target.value)}
+                            placeholder="Projets"
+                        />
+                    ) : (
+                        <p>tyu</p>
+                    )}
+    
+                </div>
+                
                 {token ? (
                     <button
                         onClick={() => {
@@ -43,12 +61,7 @@ const Header = ({search,setSearch, token, setUser }) => {
                     </div>
                 )}
             </div>
-            <div>
-                <input
-                    onChange={(event) => setSearch(event.target.value)}
-                    placeholder="Projets"
-                />
-            </div>
+            
         </div>
     );
 
@@ -57,6 +70,8 @@ const Header = ({search,setSearch, token, setUser }) => {
 export default Header;
 
 /*
+
+ <h1>detakende-spill</h1>
  <imput 
 type="text"
 className="search-input"
