@@ -66,7 +66,7 @@ function App() {
         console.log("prefixe url : " + import.meta.env.VITE_API_projet);
         console.log("search : " + search);
 
-        const response = await axios.get(`${import.meta.env.VITE_API_projet}/projets?title=${search}`);
+        const response = await axios.get(`${import.meta.env.VITE_API}/projets?title=${search}`);
         setData(response.data);
         setIsLoading(false);
       } catch (error) {
