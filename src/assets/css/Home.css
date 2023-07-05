@@ -1,11 +1,23 @@
 
 .home-container{
     display: flex;
-    align-items:  center;
-    justify-content: space-between;
+    flex-direction: column;
     width: 1600px;
-    height: 60px;
     margin: auto;
     padding: 10px 0;
     border: dotted 3px #D3D3D3;    
+}
+
+.home-titre{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.line-container{
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.line{
+    margin-top: 2px;
 }
