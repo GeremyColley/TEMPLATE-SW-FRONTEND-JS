@@ -18,7 +18,7 @@ const Card = ({ projets }) => {
       className="Card"
     >
       <span>
-        {projets.NomProjet} {projets.type}
+        {projets.titre} 
       </span>
       {hoverLine && <span className="copy-span">Click to copy !</span>}
     </div>
