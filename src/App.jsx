@@ -53,7 +53,7 @@ function App() {
   }
 */
   for (let i = 0; i < data.length; i++) {
-    if (data[i].NomProjet.includes(search)) {
+    if (data[i].titre.includes(search)) {
       if (tab.length < 10) {
         tab.push(<Card projets={data[i]} key={i} />);
       } else {
