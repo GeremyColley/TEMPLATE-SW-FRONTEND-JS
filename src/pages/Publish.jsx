@@ -1,12 +1,11 @@
 import React, { useState } from 'react'
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import '../assets/css/Publish.css'
 
 const Publish = ({token}) => {
     const [nomProjet, setNomProjet] = useState();
     const [montantDuProjet,setMontantDuProjet] = useState();
     console.log("token : " + token);
-
-
 
     const handleSubmit = async (e) => {
         try {
@@ -95,6 +94,8 @@ const Publish = ({token}) => {
     ) : (
         <div className="publish-container">
             <p>Accés interdit</p>
+            <Link to="/signup">Pas encore de compte ? Inscris-toi !</Link>
+            <Link to="/login">Connectes toi !</Link>
         </div>
     );
 }
