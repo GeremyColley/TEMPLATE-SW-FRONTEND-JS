@@ -6,7 +6,7 @@ import './App.css'
 
 // Components
 import Header from './components/Header'
-import Line from './components/Line'
+import Card from './components/Card';
 
 // Pages
 import Home from './pages/Home'
@@ -53,7 +53,7 @@ function App() {
   for (let i = 0; i < data.length; i++) {
     if (data[i].NomProjet.includes(search)) {
       if (tab.length < 10) {
-        tab.push(<Line projets={data[i]} key={i} />);
+        tab.push(<Card projets={data[i]} key={i} />);
       } else {
         break;
       }
@@ -65,7 +65,6 @@ function App() {
       try {
         console.log("URL VITE_API : " + import.meta.env.VITE_API);
         console.log("search : " + search);
-
         const response = await axios.get(`${import.meta.env.VITE_API}/projets?title=${search}`);
         setData(response.data);
         setIsLoading(false);

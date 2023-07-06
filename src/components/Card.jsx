@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Line = ({ projets }) => {
+const Card = ({ projets }) => {
   const [hoverLine, setHoverLine] = useState(false);
 
   return (
@@ -25,4 +25,4 @@ const Line = ({ projets }) => {
   );
 };
 
-export default Line;
+export default Card;
