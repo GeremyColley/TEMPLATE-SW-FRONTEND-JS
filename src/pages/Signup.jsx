@@ -24,7 +24,7 @@ const Signup = ({ setUser }) => {
         }
       );
       if (response.data.token) {
-        setUser(response.data.token);
+        setUser(response.data.token, response.data._id);
         navigate("/");
       } else {
         alert("Une erreur est survenue, veuillez réssayer.");
@@ -44,7 +44,7 @@ const Signup = ({ setUser }) => {
         <input
           value={username}
           onChange={(event) => {
-            setUsername(event.target.value);
+            setUsername(event.target.value, email);
           }}
           placeholder="Nom d'utilisateur"
           type="text"

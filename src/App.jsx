@@ -30,13 +30,15 @@ function App() {
 
   const tab = [];
 
-  const setUser = (token) => {
+  const setUser = (token , login) => {
     if (token) {
       setToken(token);
       Cookies.set("token", token);
+      Cookies.set("login", login);
     } else {
       setToken(null);
       Cookies.remove("token");
+      Cookies.remove("login", login);
     }
   };
 /*
@@ -65,7 +67,7 @@ function App() {
       try {
         console.log("URL VITE_API : " + import.meta.env.VITE_API);
         console.log("search : " + search);
-        const response = await axios.get(`${import.meta.env.VITE_API}/projets?title=${search}`);
+        const response = await axios.get(`${import.meta.env.VITE_API}/offer?title=${search}`);
         setData(response.data);
         setIsLoading(false);
       } catch (error) {

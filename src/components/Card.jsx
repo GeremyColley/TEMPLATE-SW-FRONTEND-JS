@@ -15,7 +15,7 @@ const Card = ({ projets }) => {
         // Google : react copy to clipboard
         // https://stackoverflow.com/a/52033479
       }}
-      className="line"
+      className="Card"
     >
       <span>
         {projets.NomProjet} {projets.type}

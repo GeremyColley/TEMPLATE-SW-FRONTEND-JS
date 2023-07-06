@@ -1,26 +1,34 @@
 import React, { useState } from 'react'
 import { Link } from "react-router-dom";
 import '../assets/css/Publish.css'
+import Cookies from 'js-cookie';
 
 const Publish = ({token}) => {
-    const [nomProjet, setNomProjet] = useState();
-    const [montantDuProjet,setMontantDuProjet] = useState();
-    console.log("token : " + token);
+    const [titre, setTitre] = useState();
+    const [date, setDate] = useState();
+    const [montant, setMontant] = useState();
+    const [comment, setComment] = useState();
+    const [nombre, setNombre] = useState();
+
+    //console.log("token : " + token);
 
     const handleSubmit = async (e) => {
         try {
           e.preventDefault();
+          console.log("Titre " + titre);
+          console.log("Montant " + montant);
+          console.log("Date " + date);
+          console.log("Comment " + comment);
+          console.log("Nombre " + nombre);
+          console.log("id " + Cookies.get('login'));
+
           const formData = new FormData();
-          //formData.append("picture", file);
-          formData.append("title", nomProjet);
-          formData.append("Montant du projet", montantDuProjet);
-          //formData.append("description", description);
-          //formData.append("price", price);
-          //formData.append("size", selectedSize);
-          //formData.append("color", color);
-          //formData.append("condition", selectedWearRate);
-          //formData.append("city", city);
-          //formData.append("brand", selectedBrand);
+          formData.append("titre", titre);
+          formData.append("montant", montant);
+          formData.append("date", date);
+          formData.append("comment", comment);
+          formData.append("nombre", nombre);
+          formData.append("idLogin", Cookies.get('login'));
         /*
           const response = await axios.post(
             `${process.env.REACT_APP_BASE_URL}/offer/publish`,
@@ -51,7 +59,7 @@ const Publish = ({token}) => {
         }
     };
 
-
+    
     return token ? (
         <div className="publish-container">
             <h2>Publie ton projet</h2>
@@ -60,26 +68,65 @@ const Publish = ({token}) => {
                     <div className="text-input">
                         <input
                             type="text"
-                            id="nomProjet"
-                            name="nomProjet"
-                            value={nomProjet}
-                            placeholder="Nom du projet"
+                            id="titre"
+                            name="titre"
+                            value={titre}
+                            placeholder="titre"
                             onChange={(event) => {
-                            const value = event.target.value;
-                            setNomProjet(value);
+                              const value = event.target.value;
+                              setTitre(value);
+                            }}
+                        />
+                    </div>
+                    <div className="text-input">
+                        <input
+                            type="date"
+                            id="date"
+                            name="date"
+                            value={date}
+                            placeholder="date"
+                            onChange={(event) => {
+                              const value = event.target.value;
+                              setDate(value);
                             }}
                         />
                     </div>
                     <div className="text-input">
                         <input
                             type="text"
-                            id="montantDuProjet"
-                            name="montantDuProjet"
-                            value={montantDuProjet}
-                            placeholder="Montant du Projet"
+                            id="montant"
+                            name="montant"
+                            value={montant}
+                            placeholder="montant"
                             onChange={(event) => {
-                            const value = event.target.value;
-                            setMontantDuProjet(value);
+                              const value = event.target.value;
+                              setMontant(value);
+                            }}
+                        />
+                    </div>
+                    <div className="text-input">
+                        <input
+                            type="text"
+                            id="comment"
+                            name="comment"
+                            value={comment}
+                            placeholder="Comment"
+                            onChange={(event) => {
+                              const value = event.target.value;
+                              setComment(value);
+                            }}
+                        />
+                    </div>
+                    <div className="text-input">
+                        <input
+                            type="text"
+                            id="nombre"
+                            name="nombre"
+                            value={nombre}
+                            placeholder="nombre"
+                            onChange={(event) => {
+                              const value = event.target.value;
+                              setNombre(value);
                             }}
                         />
                     </div>

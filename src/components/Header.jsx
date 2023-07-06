@@ -35,7 +35,7 @@ const Header = ({search,setSearch, token, setUser }) => {
                 {token ? (
                     <button
                         onClick={() => {
-                        setUser(null);
+                        setUser(null, null);
                         }}
                         className="button-logout"
                     >Se déconnecter</button>

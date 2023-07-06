@@ -26,7 +26,7 @@ const Login = ({ setUser }) => {
       );
       console.log("=> ici" );
       if (response.data.token) {
-        setUser(response.data.token);
+        setUser(response.data.token, response.data._id);
         setIsLoading(false);
         navigate(fromPublish ? "/" : "/publish");
       } else {
