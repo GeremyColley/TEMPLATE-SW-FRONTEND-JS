@@ -45,7 +45,7 @@ const Login = ({ setUser }) => {
   return (
     <div className="login-container">
       <h2>Se connecter</h2>
-      <form onSubmit={handleSubmit} className="login-form">
+      <form onSubmit={handleSubmit} className="login-form"> 
         <input
           onChange={(event) => {
             setEmail(event.target.value);
@@ -70,7 +70,7 @@ const Login = ({ setUser }) => {
           </button>
         )}
       </form>
-      <Link to="/signup">Pas encore de compte ? Inscris-toi !</Link>
+      <Link to="/signup" className="link-signup">Pas encore de compte ? Inscris-toi !</Link>
     </div>
   );
 };

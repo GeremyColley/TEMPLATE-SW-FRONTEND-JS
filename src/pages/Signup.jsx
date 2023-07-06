@@ -80,7 +80,7 @@ const Signup = ({ setUser }) => {
         </div>
         <button type="submit">S'inscrire</button>
       </form>
-      <Link to="/login">Tu as déjà un compte ? Connecte-toi !</Link>
+      <Link to="/login" className="link-login">Tu as déjà un compte ? Connecte-toi !</Link>
     </div>
   );
 };

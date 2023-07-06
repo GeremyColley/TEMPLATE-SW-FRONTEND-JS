@@ -9,24 +9,40 @@
     padding: 10px 0;
     border: dotted 3px #D3D3D3;    
 }
-
 */
 
 
 .login-container {
-    display: flex;
+  display: flex;
+  flex-direction: column;
+  width: 1600px;
+  margin: auto;
+  border: dotted 3px #D3D3D3;
+}
+
+.login-container>h2 {
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+/*
+ display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
     margin-top: 30px;
     border: dotted 3px #D3D3D3;    
-  }
+    */
+
   .login-form {
     display: flex;
     width: 275px;
-    margin: auto;
+    margin-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
     flex-direction: column;
   }
+  
   .login-form > input {
     border: none;
     border-bottom: 1px solid #fcced3;
@@ -70,7 +86,6 @@
     border-radius: 5px;
     color: white;
     font-size: 16px;
-    margin-top: 20px;
   }
   
   .login-container a {
@@ -83,3 +98,7 @@
     font-size: 9px;
   }
   
+  .link-signup {
+    margin-left: 10px;
+    margin-bottom: 10px;
+  }

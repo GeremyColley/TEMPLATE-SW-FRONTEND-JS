@@ -14,17 +14,32 @@
 /* LOGIN ********************** */
 
 .signup-container {
+  display: flex;
+  flex-direction: column;
+  width: 1600px;  
+  margin: auto;
+  padding: 10px 0;
+  border: dotted 3px #D3D3D3;   
+}
+
+.signup-container>h2 {
+  padding-left: 10px;
+  padding-top: 10px;
+}
+  /*
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
     margin-top: 30px;
-    border: dotted 3px #D3D3D3;    
-  }
+    border: dotted 3px #D3D3D3;    */
+
   .signup-form {
     display: flex;
     width: 275px;
-    margin: auto;
+    margin-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
     flex-direction: column;
   }
   .signup-form > input {
@@ -45,19 +60,21 @@
   }
   
   .checkbox-container {
-    margin-top: 20px;
-    padding: 10px;
+    margin-top: 1px;
+    padding-top: 1px;
   }
   .checkbox-container > div {
     display: flex;
   }
   .checkbox-container > p {
+    margin-top: 10px;;
     text-align: left;
     color: #999999;
     font-size: 12px;
   }
   
   .checkbox-container span {
+    margin-bottom: 8px;
     color: #666666;
   }
   
@@ -70,7 +87,7 @@
     border-radius: 5px;
     color: white;
     font-size: 16px;
-    margin-top: 20px;
+    margin-top: 10px;
   }
   
   .signup-container a {
@@ -83,3 +100,7 @@
     font-size: 9px;
   }
   
+  .link-login {
+    margin-left: 10px;
+    margin-bottom: 10px;
+  }
