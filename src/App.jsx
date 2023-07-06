@@ -63,7 +63,8 @@ function App() {
   useEffect( () => {
     const fetchData = async () => {
       try {
-        console.log("prefixe url : " + import.meta.env.VITE_API_projet);
+        console.log("prefixe url VITE_API_projet : " + import.meta.env.VITE_API_projet);
+        console.log("prefixe url VITE_API : " + import.meta.env.VITE_API);
         console.log("search : " + search);
 
         const response = await axios.get(`${import.meta.env.VITE_API}/projets?title=${search}`);
