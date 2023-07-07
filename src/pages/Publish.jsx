@@ -21,7 +21,7 @@ const Publish = ({token}) => {
           console.log("Date " + date);
           console.log("Comment " + comment);
           console.log("Nombre " + nombre);
-          //console.log("id " + Cookies.get('login'));
+          console.log("id " + Cookies.get('login'));
 
           const formData = new FormData();
           formData.append("titre", titre);
@@ -31,14 +31,32 @@ const Publish = ({token}) => {
           formData.append("nombre", nombre);
           formData.append("idLogin", Cookies.get('login'));
         
+          console.log("formdata : " + formData);
+
+          /*
+          {
+              titre: titre,
+              montant: montant,
+              date: date,
+              comment: comment,
+              nombre: nombre,
+              idLogin: Cookies.get('login')
+            },
+            */
+
           const response = await axios.post(
             `${import.meta.env.VITE_API}/offer/create`,
-            formData,
+            {
+              titre: titre,
+              montant: montant,
+              date: date,
+              comment: comment,
+              nombre: nombre,
+              idLogin: Cookies.get('login')
+            },
             {
               headers: {
                 Authorization: "Bearer " + token,
-                //send formData with axios make this headers EXPLICIT !
-                "Content-Type": "multipart/form-data",
               },
             }
           );

@@ -82,6 +82,7 @@ function App() {
           <Route path='/login' element={<Login setUser={setUser}/>}/>
           <Route path="/signup" element={<Signup setUser={setUser} />} />
           <Route path='/publish' element={<Publish token={token} />}/>
+          <Route path='/details' element={<Details />}/>
         </Routes>
       </Router>
     </div>
