@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from "react-router-dom";
+import axios from "axios";
 import '../assets/css/Publish.css'
 import Cookies from 'js-cookie';
 
@@ -20,7 +21,7 @@ const Publish = ({token}) => {
           console.log("Date " + date);
           console.log("Comment " + comment);
           console.log("Nombre " + nombre);
-          console.log("id " + Cookies.get('login'));
+          //console.log("id " + Cookies.get('login'));
 
           const formData = new FormData();
           formData.append("titre", titre);
@@ -29,9 +30,9 @@ const Publish = ({token}) => {
           formData.append("comment", comment);
           formData.append("nombre", nombre);
           formData.append("idLogin", Cookies.get('login'));
-        /*
+        
           const response = await axios.post(
-            `${process.env.REACT_APP_BASE_URL}/offer/publish`,
+            `${import.meta.env.VITE_API}/offer/create`,
             formData,
             {
               headers: {
@@ -41,8 +42,8 @@ const Publish = ({token}) => {
               },
             }
           );
-          */
-          // console.log(response.data);
+          
+          console.log(response.data);
           /*
           if (response.data._id) {
             // redirectoin vers l'offre
@@ -51,6 +52,7 @@ const Publish = ({token}) => {
             alert("Une erreur est survenue, veuillez réssayer");
           }*/
         } catch (error) {
+          console.log(error);
             /*
           alert(
             error?.response?.data?.message || "Une erreur est survenue, veuillez réssayer"
