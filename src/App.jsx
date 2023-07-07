@@ -15,20 +15,21 @@ import Signup from './pages/Signup'
 import Login from './pages/Login'
 import Account from './pages/Account'
 import Details from './pages/Details'
-
 import projets from './assets/json/projets.json'
-
 
 function App() {
   const [token, setToken] = useState(Cookies.get("token") || null);
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [search, setSearch] = useState("");
-
-  //const [sortPrice, setSortPrice] = useState();
-  //const [fetchRangeValues, setFetchRangeValues] = useState([0, 10000]);
-
   const tab = [];
+
+  /*
+  const buffer = import.meta.env.VITE_API;
+  <div>
+    <h1>{buffer}</h1>
+  </div>
+      */
 
   const setUser = (token , login) => {
     if (token) {
@@ -41,17 +42,7 @@ function App() {
       Cookies.remove("login", login);
     }
   };
-/*
-  for (let i = 0; i < projets.length; i++) {
-    if (projets[i].NomProjet.includes(search)) {
-      if (tab.length < 10) {
-        tab.push(<Line projets={projets[i]} key={i} />);
-      } else {
-        break;
-      }
-    }
-  }
-*/
+
   for (let i = 0; i < data.length; i++) {
     if (data[i].titre.includes(search)) {
       if (tab.length < 10) {
@@ -98,3 +89,16 @@ function App() {
 }
 
 export default App
+
+
+/*
+  for (let i = 0; i < projets.length; i++) {
+    if (projets[i].NomProjet.includes(search)) {
+      if (tab.length < 10) {
+        tab.push(<Line projets={projets[i]} key={i} />);
+      } else {
+        break;
+      }
+    }
+  }
+*/

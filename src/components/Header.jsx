@@ -15,7 +15,7 @@ const Header = ({search,setSearch, token, setUser }) => {
                 <div className="cart-logo" onClick={() => {navigate("/");}}>
                     <img alt="Logo" src={logo} width="100px"  height="60px" />
                 </div>
-                <p>{import.meta.env.VITE_API}</p>
+               
                 <div>
                     {(location.pathname === "/" ) && (
                         <input
