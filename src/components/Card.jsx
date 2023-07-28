@@ -1,7 +1,9 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Card = ({ projets }) => {
   const [hoverLine, setHoverLine] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <div
@@ -11,6 +13,7 @@ const Card = ({ projets }) => {
       onMouseLeave={() => setHoverLine(false)}
       onClick={() => {
         console.log("J'ai cliqué");
+        navigate(`/details/${projets._id}`);
         //navigator.clipboard.writeText(emoji.symbol);
         // lien vers la solution
         // Google : react copy to clipboard

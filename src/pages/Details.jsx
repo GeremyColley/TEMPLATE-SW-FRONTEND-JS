@@ -28,8 +28,11 @@ const details = () => {
         <h1>{data.titre}</h1>
         <p>{data.montant}</p>       
         <p>{data.comment}</p>
-        <p></p>
+        <p>{data.nombre}</p>
+        <p>{data.date}</p>
+    
     </div>
+
   
   );
 };
