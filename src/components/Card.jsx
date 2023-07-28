@@ -10,7 +10,8 @@ const Card = ({ projets }) => {
       onMouseEnter={() => setHoverLine(true)}
       onMouseLeave={() => setHoverLine(false)}
       onClick={() => {
-        navigator.clipboard.writeText(emoji.symbol);
+        console.log("J'ai cliqué");
+        //navigator.clipboard.writeText(emoji.symbol);
         // lien vers la solution
         // Google : react copy to clipboard
         // https://stackoverflow.com/a/52033479
@@ -18,7 +19,7 @@ const Card = ({ projets }) => {
       className="Card"
     >
       <span>
-        {projets.titre} 
+        {projets.titre} - {projets.date} - {projets.montant} - {projets.comment} - {projets.nombre}
       </span>
       {hoverLine && <span className="copy-span">Click to copy !</span>}
     </div>

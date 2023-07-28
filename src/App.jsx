@@ -16,6 +16,7 @@ import Login from './pages/Login'
 import Account from './pages/Account'
 import Details from './pages/Details'
 import projets from './assets/json/projets.json'
+import MyPublish from './pages/MyPublish';
 
 function App() {
   const [token, setToken] = useState(Cookies.get("token") || null);
@@ -83,6 +84,8 @@ function App() {
           <Route path="/signup" element={<Signup setUser={setUser} />} />
           <Route path='/publish' element={<Publish token={token} />}/>
           <Route path='/details' element={<Details />}/>
+          <Route path='/account' element={<Account token={token} />}/>
+          <Route path='/mypublish' element={<MyPublish token={token} />}/>
         </Routes>
       </Router>
     </div>

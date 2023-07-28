@@ -29,6 +29,8 @@ const Header = ({search,setSearch, token, setUser }) => {
                     <Link to="/">Home</Link>
                     <br/>
                     <Link to="/Publish">Lance ton projet</Link>
+                    {token && (<><br/><Link to="/account">My account</Link></>)}
+                    {token && (<><br/><Link to="/mypublish">Mes projets</Link></>)}
                 </nav>
                 <br/>
 
@@ -54,6 +56,7 @@ const Header = ({search,setSearch, token, setUser }) => {
                             }}
                             className="header-button button-login-signup"
                         >Se connecter</button>
+                        
                     </div>
                 )}
             </div>
