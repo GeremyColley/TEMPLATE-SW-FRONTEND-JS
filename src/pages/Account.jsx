@@ -1,13 +1,13 @@
-
+import '../assets/css/Account.css'
 
 const Account = () => {
 
     return (
-        <div>
+        <div className="account-container">
             <h1>Account</h1>
-            <p>Tes projets</p>
-            <p>Tes contributions</p>
-            <p>Tes favories</p>
+            <p>Mes projets</p>
+            <p>Mes contributions</p>
+            <p>Mes favories</p>
         </div>
     );
 
